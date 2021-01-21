@@ -1,12 +1,16 @@
 #intro
 #this is a 2-player dice game
+import random
+
+cumulativeScore=0
+
 def menuChoice():
 	print("Option 1: Display rules")
 	print("Option 2: Start new game")
 	print("Option 3: Quit")
 	print("What would you like to do?")
 	choice=input();
-	while (choice != 1 and choice != 2 and choice != 3):
+	while choice != 1 and choice != 2 and choice != 3:
 		print("That is not a valid choice")
 		print("Please enter a number between 1 and 3")
 		choice=input()
@@ -21,5 +25,35 @@ def displayRules():
 	print("the player's score reverts to zero and their turn ends.")
 	print("(etc.)")
 	
+def playerTurn(player,score):
+	print("Your turn, "+player)
+	anotherGo="Y"
+	scoreThisTurn=0
+	Dice=[1,2,3,4,5,6]
+	while anotherGo=="y" or anotherGo=="Y":
+		#generate dice
+		die1=random.choice(Dice)
+		die2=randowm.choice(Dice)
+		print("You rolled "+die1+" and "+die2)
+		if die1 == die2:
+			scoreThisTurn=0
+			cumulativeScore=0
+			print("Bad luck! Press any key to continue")
+			#Press any key to continue
+			anotherGo="N"
+		else:
+			scoreThisTurn=scoreThisTurn+die1+die2
+			cumulativeScore=cumulativeScore+scoreThisTurn
+			print("Your score this turn is "+scoreThisTurn)
+			print(player+", Your cumulative score is "+cumulativeScore)
+			if cumulativeScore >=50:
+				anotherGo="N"
+			else:
+				print("Another go? (Answer Y or N)")
+				anotherGo=input()
+	return cumulativeScore
+
+
+			
 
 		
