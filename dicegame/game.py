@@ -53,7 +53,22 @@ def playerTurn(player,score):
 				anotherGo=input()
 	return cumulativeScore
 
-
+#subroutine to play game
+def playGame
+	score1=0
+	score2=0
+	print("Enter Player 1's name: ")
+	player1=input()
+	print("Enter Player 2's name: ")
+	player2=input()
+	while score1 < 50 and score2 < 50:
+		score1=playerTurn(player1,score1)
+		if score1 >= 50:
+			print("You win!")
+		else:
+			score2=playerTurn(player2,score2)
+			if score2 >=50:
+				print("You win!")
 			
 
 		
