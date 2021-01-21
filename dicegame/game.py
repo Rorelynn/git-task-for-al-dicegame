@@ -54,7 +54,7 @@ def playerTurn(player,score):
 	return cumulativeScore
 
 #subroutine to play game
-def playGame
+def playGame():
 	score1=0
 	score2=0
 	print("Enter Player 1's name: ")
@@ -69,6 +69,17 @@ def playGame
 			score2=playerTurn(player2,score2)
 			if score2 >=50:
 				print("You win!")
+
+#main program starts here
+option=menuChoice()
+while option != 3:
+	if option == 1:
+		displayRules()
+	else:
+		playGame()
+	option=menuChoice()
+print("Goodbye!")
+
 			
 
 		
